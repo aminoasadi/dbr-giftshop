@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { HomeCollectionGrid } from '../components/home-collections';
 import { assetUrl } from '../lib/assets';
 
@@ -18,6 +19,7 @@ const steps = [
 ];
 
 const missionPoints = [100, 50, 150, 50, 500, 300];
+const missionIconNames = ['compass', 'mail', 'message', 'instagram', 'mic', 'users'] as const;
 
 const questions = [
   ['دیپ بلو شاپ چه ارتباطی با برنامهٔ وفاداری دارد؟', 'اینجا گیفت‌شاپ برنامهٔ وفاداری و کامیونیتی دیپ بلو است. مخاطبان و مشتریانی که در کمپین همراه ما هستند، با انجام مأموریت‌ها امتیاز می‌گیرند و آن امتیاز را اینجا برای خرید محصول خرج می‌کنند.'],
@@ -26,6 +28,21 @@ const questions = [
   ['کد پنج‌رقمی کارت را کجا ثبت کنم؟', 'از دکمهٔ ورود، با ایمیل و کد یک‌بارمصرف وارد شو. سپس در بخش شارژ اعتبار پروفایلت، کد پنج‌رقمی کارت را ثبت کن. این کد با کد ورود ایمیلی متفاوت است.'],
   ['آیا عضویت یا دنبال‌کردن صفحه، حسابم را خودکار شارژ می‌کند؟', 'برای دریافت امتیاز، شرایط اعلام‌شدهٔ همان مأموریت را دنبال کن. در مسیر فعلی فروشگاه، اعتبار با ثبت کد کارت در حساب شارژ می‌شود.'],
 ];
+
+function MissionStrokeIcon({ name }: { name: (typeof missionIconNames)[number] }) {
+  const paths: Record<(typeof missionIconNames)[number], ReactNode> = {
+    compass: <><circle cx="12" cy="12" r="8" /><path d="m14.7 9.3-1.6 4.4-4.4 1.6 1.6-4.4 4.4-1.6Z" /></>,
+    mail: <><rect x="4" y="6" width="16" height="12" rx="2" /><path d="m5 8 7 5 7-5" /></>,
+    message: <><path d="M5 7.8A3.8 3.8 0 0 1 8.8 4h6.4A3.8 3.8 0 0 1 19 7.8v3.9a3.8 3.8 0 0 1-3.8 3.8H11l-4.4 3v-3.2A3.8 3.8 0 0 1 5 12.1V7.8Z" /><path d="M9 9h6M9 12h4" /></>,
+    instagram: <><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3.2" /><path d="M16.4 7.8h.1" /></>,
+    mic: <><rect x="9" y="4" width="6" height="10" rx="3" /><path d="M6.5 11.5a5.5 5.5 0 0 0 11 0M12 17v3M9 20h6" /></>,
+    users: <><path d="M9.5 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4.5 19a5 5 0 0 1 10 0" /><path d="M16 11.4a2.6 2.6 0 1 0-1.2-5M16.6 18.6A4.2 4.2 0 0 0 13.8 15" /></>,
+  };
+
+  return <svg className="mission-stroke-svg" viewBox="0 0 24 24" aria-hidden="true">
+    {paths[name]}
+  </svg>;
+}
 
 export default function Home() {
   return <main className="aida-shell">
@@ -51,8 +68,11 @@ export default function Home() {
     <section className="aida-section" id="missions" style={{ scrollMarginTop: 140 }} aria-labelledby="missions-title">
       <header className="aida-heading"><div><p className="aida-label">مأموریت‌های برنامهٔ وفاداری</p><h2 id="missions-title">همراهی تو امتیاز دارد.</h2></div><p>مخاطب و مشتری ما هستی؛ مشارکتت در کمپین، اعتبار انتخاب هدیه می‌سازد.</p></header>
       <div className="aida-grid three-up">
-        {missions.map(([title, label, description], index) => <article className="feature-card aida-card" key={label}>
-          <span className="aida-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)} / {label}</span>
+        {missions.map(([title, label, description], index) => <article className="feature-card aida-card mission-card" key={label}>
+          <div className="mission-card-head">
+            <span className="aida-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)} / {label}</span>
+            <span className="mission-stroke-icon"><MissionStrokeIcon name={missionIconNames[index]} /></span>
+          </div>
           <h3>{title}</h3><p>{description}</p>
           <span className="aida-command">پاداش مأموریت: {new Intl.NumberFormat('fa-IR').format(missionPoints[index])} امتیاز</span>
         </article>)}
