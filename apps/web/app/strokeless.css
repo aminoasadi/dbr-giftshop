@@ -652,9 +652,14 @@ textarea,
   height: 40px;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.75;
+  stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;
+  overflow: visible;
+}
+
+.mission-stroke-svg * {
+  vector-effect: non-scaling-stroke;
 }
 
 .mission-card:hover .mission-stroke-icon {

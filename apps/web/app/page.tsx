@@ -24,12 +24,12 @@ const journeyIconNames = ['flag', 'key', 'gift'] as const;
 
 function MissionStrokeIcon({ name }: { name: (typeof missionIconNames)[number] }) {
   const paths: Record<(typeof missionIconNames)[number], ReactNode> = {
-    compass: <><circle cx="12" cy="12" r="8" /><path d="m14.7 9.3-1.6 4.4-4.4 1.6 1.6-4.4 4.4-1.6Z" /></>,
-    mail: <><rect x="4" y="6" width="16" height="12" rx="2" /><path d="m5 8 7 5 7-5" /></>,
-    message: <><path d="M5 7.8A3.8 3.8 0 0 1 8.8 4h6.4A3.8 3.8 0 0 1 19 7.8v3.9a3.8 3.8 0 0 1-3.8 3.8H11l-4.4 3v-3.2A3.8 3.8 0 0 1 5 12.1V7.8Z" /><path d="M9 9h6M9 12h4" /></>,
-    instagram: <><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3.2" /><path d="M16.4 7.8h.1" /></>,
+    compass: <><circle cx="12" cy="12" r="8" /><path d="m15.1 8.9-2.1 5.4-4.1 1.8 2.1-5.4 4.1-1.8Z" /></>,
+    mail: <><rect x="4" y="6.5" width="16" height="11" rx="2" /><path d="m5.5 8.5 6.5 4.7 6.5-4.7" /></>,
+    message: <><path d="M5 7.5A3.5 3.5 0 0 1 8.5 4h7A3.5 3.5 0 0 1 19 7.5v4.2a3.5 3.5 0 0 1-3.5 3.5h-3.8L7 18.5v-3.8a3.5 3.5 0 0 1-2-3.2v-4Z" /><path d="M9 8.8h6M9 11.8h4.2" /></>,
+    instagram: <><rect x="5" y="5" width="14" height="14" rx="4" /><circle cx="12" cy="12" r="3" /><path d="M16.3 7.7h.1" /></>,
     mic: <><rect x="9" y="4" width="6" height="10" rx="3" /><path d="M6.5 11.5a5.5 5.5 0 0 0 11 0M12 17v3M9 20h6" /></>,
-    users: <><path d="M9.5 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4.5 19a5 5 0 0 1 10 0" /><path d="M16 11.4a2.6 2.6 0 1 0-1.2-5M16.6 18.6A4.2 4.2 0 0 0 13.8 15" /></>,
+    users: <><circle cx="9" cy="8" r="3" /><path d="M4 19a5 5 0 0 1 10 0" /><path d="M15.5 11a2.7 2.7 0 1 0-1.1-5.2M18.5 19a4.4 4.4 0 0 0-3.1-4.2" /></>,
   };
 
   return <svg className="mission-stroke-svg" viewBox="0 0 24 24" aria-hidden="true">
