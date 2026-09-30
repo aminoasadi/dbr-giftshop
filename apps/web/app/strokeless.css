@@ -664,6 +664,103 @@ textarea,
   border-color: rgba(244, 247, 249, .48);
 }
 
+.site-footer {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.35fr) repeat(2, minmax(150px, .6fr)) minmax(220px, .75fr);
+  gap: 6px;
+  width: calc(100% - 40px);
+  max-width: none;
+  margin: 0 auto 20px;
+  padding: 1px;
+  color: #d6dee4;
+  background: rgba(29, 70, 103, .74);
+  border-radius: 18px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    54px 100%,
+    49px calc(100% - 1px),
+    42px calc(100% - 5px),
+    5px calc(100% - 42px),
+    1px calc(100% - 49px),
+    0 calc(100% - 54px)
+  );
+}
+
+.site-footer > * {
+  min-height: 220px;
+  padding: 30px;
+  background: rgba(11, 35, 56, .88);
+}
+
+.site-footer-brand,
+.site-footer-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+  color: #f4f7f9;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.footer-brand span {
+  color: #a9b6c1;
+  font-size: .62em;
+}
+
+.site-footer-brand p {
+  max-width: 460px;
+  margin: 22px 0 0;
+  color: #a9b6c1;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.site-footer-nav p,
+.site-footer-meta p {
+  margin: 0 0 8px;
+  color: #778794;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.site-footer-nav a {
+  color: #d6dee4;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 140ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.site-footer-nav a:hover {
+  color: #f4f7f9;
+}
+
+.site-footer-meta {
+  justify-content: space-between;
+  color: #a9b6c1;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.site-footer-meta span:last-child {
+  color: #778794;
+}
+
 @media (max-width: 760px) {
   .aida-cta {
     grid-template-columns: minmax(0, 1fr);
@@ -693,5 +790,20 @@ textarea,
   .mission-stroke-icon {
     width: 42px;
     height: 42px;
+  }
+
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr);
+    width: calc(100% - 16px);
+    margin-bottom: 8px;
+  }
+
+  .site-footer > * {
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .site-footer-brand p {
+    max-width: none;
   }
 }
