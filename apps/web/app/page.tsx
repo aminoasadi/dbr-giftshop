@@ -76,8 +76,8 @@ export default function Home() {
         {missions.map(([title, label, description], index) => <article className="feature-card aida-card mission-card" key={label}>
           <div className="mission-card-head">
             <span className="aida-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)} / {label}</span>
-            <span className="mission-stroke-icon"><MissionStrokeIcon name={missionIconNames[index]} /></span>
           </div>
+          <span className="mission-stroke-icon"><MissionStrokeIcon name={missionIconNames[index]} /></span>
           <h3>{title}</h3><p>{description}</p>
           <span className="aida-command">پاداش مأموریت: {new Intl.NumberFormat('fa-IR').format(missionPoints[index])} امتیاز</span>
         </article>)}
