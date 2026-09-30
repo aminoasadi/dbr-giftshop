@@ -21,14 +21,6 @@ const steps = [
 const missionPoints = [100, 50, 150, 50, 500, 300];
 const missionIconNames = ['compass', 'mail', 'message', 'instagram', 'mic', 'users'] as const;
 
-const questions = [
-  ['دیپ بلو شاپ چه ارتباطی با برنامهٔ وفاداری دارد؟', 'اینجا گیفت‌شاپ برنامهٔ وفاداری و کامیونیتی دیپ بلو است. مخاطبان و مشتریانی که در کمپین همراه ما هستند، با انجام مأموریت‌ها امتیاز می‌گیرند و آن امتیاز را اینجا برای خرید محصول خرج می‌کنند.'],
-  ['اعتبار خرید من از کجا می‌آید؟', 'از مشارکت تو در برنامهٔ وفاداری؛ مثل تجربه‌کردن محتواهای دیجیتال، عضویت در خبرنامه و کامیونیتی، دنبال‌کردن اینستاگرام، ضبط پادکست و حضور در برنامه‌ها. هر مأموریت، پاداش و شرایط خودش را دارد.'],
-  ['هر مأموریت چند امتیاز دارد؟', 'تجربهٔ دیجیتال ۱۰۰، عضویت در خبرنامه ۵۰، عضویت در دیسکورس ۱۵۰، دنبال‌کردن اینستاگرام ۵۰، ضبط پادکست ۵۰۰ و شرکت در برنامهٔ حضوری ۳۰۰ امتیاز دارد. امتیاز هر مأموریت پس از تأیید انجام آن قابل دریافت است.'],
-  ['کد پنج‌رقمی کارت را کجا ثبت کنم؟', 'از دکمهٔ ورود، با ایمیل و کد یک‌بارمصرف وارد شو. سپس در بخش شارژ اعتبار پروفایلت، کد پنج‌رقمی کارت را ثبت کن. این کد با کد ورود ایمیلی متفاوت است.'],
-  ['آیا عضویت یا دنبال‌کردن صفحه، حسابم را خودکار شارژ می‌کند؟', 'برای دریافت امتیاز، شرایط اعلام‌شدهٔ همان مأموریت را دنبال کن. در مسیر فعلی فروشگاه، اعتبار با ثبت کد کارت در حساب شارژ می‌شود.'],
-];
-
 function MissionStrokeIcon({ name }: { name: (typeof missionIconNames)[number] }) {
   const paths: Record<(typeof missionIconNames)[number], ReactNode> = {
     compass: <><circle cx="12" cy="12" r="8" /><path d="m14.7 9.3-1.6 4.4-4.4 1.6 1.6-4.4 4.4-1.6Z" /></>,
@@ -87,13 +79,6 @@ export default function Home() {
         {index === 1 && <Link className="aida-command" href="/account/redeem">ثبت کد و شارژ امتیاز <span aria-hidden>←</span></Link>}
         {index === 2 && <Link className="aida-command" href="/products">دیدن هدیه‌ها <span aria-hidden>←</span></Link>}
       </article>)}</div>
-    </section>
-
-    <section className="aida-section faq-section" aria-labelledby="faq-title">
-      <header className="aida-heading"><div><p className="aida-label">دربارهٔ مأموریت، امتیاز و خرید</p><h2 id="faq-title">قبل از شروع بدان.</h2></div></header>
-      <div className="faq-list">{questions.map(([question, answer], index) => <details className="aida-faq" key={question} open={index === 0}>
-        <summary><span>{question}</span><b aria-hidden>+</b></summary><p>{answer}</p>
-      </details>)}</div>
     </section>
 
     <section className="aida-cta" data-chamfer="bl" data-cut="44" data-radius="12" data-fillet="10">
