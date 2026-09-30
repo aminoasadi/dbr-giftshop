@@ -644,11 +644,12 @@ textarea,
   margin-top: 42px;
   margin-bottom: 18px;
   color: #d6dee4;
+  overflow: visible;
 }
 
 .mission-stroke-svg {
-  width: 26px;
-  height: 26px;
+  width: 40px;
+  height: 40px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.75;
@@ -890,6 +891,11 @@ textarea,
     height: 28px;
     margin-top: 32px;
     margin-bottom: 14px;
+  }
+
+  .mission-stroke-svg {
+    width: 36px;
+    height: 36px;
   }
 
   .site-footer {
