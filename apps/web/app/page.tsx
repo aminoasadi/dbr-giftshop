@@ -85,7 +85,7 @@ export default function Home() {
     </section>
 
     <section className="aida-section journey-section" aria-labelledby="how-title">
-      <header className="aida-heading"><div><p className="aida-label">از مشارکت تا خرید</p><h2 id="how-title">مأموریت آنجا. هدیه اینجا.</h2></div><p>اعتباری که اینجا خرج می‌کنی، حاصل حضورت در برنامهٔ وفاداری است.</p></header>
+      <header className="aida-heading"><div><p className="aida-label">از مشارکت تا خرید</p><h2 id="how-title">مأموریت آنجا. هدیه اینجا.</h2></div></header>
       <div className="journey-timeline">{steps.map(([title, description], index) => <article className="journey-step" key={title}>
         <span className="journey-node"><JourneyStrokeIcon name={journeyIconNames[index]} /></span>
         <span className="journey-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)}</span>
