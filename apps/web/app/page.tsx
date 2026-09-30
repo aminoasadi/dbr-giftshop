@@ -20,6 +20,7 @@ const steps = [
 
 const missionPoints = [100, 50, 150, 50, 500, 300];
 const missionIconNames = ['compass', 'mail', 'message', 'instagram', 'mic', 'users'] as const;
+const journeyIconNames = ['flag', 'key', 'gift'] as const;
 
 function MissionStrokeIcon({ name }: { name: (typeof missionIconNames)[number] }) {
   const paths: Record<(typeof missionIconNames)[number], ReactNode> = {
@@ -32,6 +33,18 @@ function MissionStrokeIcon({ name }: { name: (typeof missionIconNames)[number] }
   };
 
   return <svg className="mission-stroke-svg" viewBox="0 0 24 24" aria-hidden="true">
+    {paths[name]}
+  </svg>;
+}
+
+function JourneyStrokeIcon({ name }: { name: (typeof journeyIconNames)[number] }) {
+  const paths: Record<(typeof journeyIconNames)[number], ReactNode> = {
+    flag: <><path d="M6 20V5" /><path d="M6 5h9.2l-1.4 3 1.4 3H6" /></>,
+    key: <><circle cx="8.5" cy="12" r="3.5" /><path d="M12 12h8M16 12v3M19 12v2" /></>,
+    gift: <><path d="M4.5 10h15v10h-15V10Z" /><path d="M4 10h16M12 10v10M7.4 7.4C6.6 6.6 6.8 5 8.3 5c2.2 0 3.7 5 3.7 5s-3.6-.6-4.6-2.6ZM16.6 7.4c.8-.8.6-2.4-.9-2.4-2.2 0-3.7 5-3.7 5s3.6-.6 4.6-2.6Z" /></>,
+  };
+
+  return <svg className="journey-stroke-svg" viewBox="0 0 24 24" aria-hidden="true">
     {paths[name]}
   </svg>;
 }
@@ -71,13 +84,15 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="aida-section" aria-labelledby="how-title">
+    <section className="aida-section journey-section" aria-labelledby="how-title">
       <header className="aida-heading"><div><p className="aida-label">از مشارکت تا خرید</p><h2 id="how-title">مأموریت آنجا. هدیه اینجا.</h2></div><p>اعتباری که اینجا خرج می‌کنی، حاصل حضورت در برنامهٔ وفاداری است.</p></header>
-      <div className="aida-grid three-up">{steps.map(([title, description], index) => <article className="feature-card aida-card" key={title}>
-        <span className="aida-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)}</span>
-        <h3>{title}</h3><p>{description}</p>
-        {index === 1 && <Link className="aida-command" href="/account/redeem">ثبت کد و شارژ امتیاز <span aria-hidden>←</span></Link>}
-        {index === 2 && <Link className="aida-command" href="/products">دیدن هدیه‌ها <span aria-hidden>←</span></Link>}
+      <div className="journey-timeline">{steps.map(([title, description], index) => <article className="journey-step" key={title}>
+        <span className="journey-node"><JourneyStrokeIcon name={journeyIconNames[index]} /></span>
+        <span className="journey-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)}</span>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        {index === 1 && <Link className="journey-command" href="/account/redeem">ثبت کد و شارژ امتیاز <span aria-hidden>←</span></Link>}
+        {index === 2 && <Link className="journey-command" href="/products">دیدن هدیه‌ها <span aria-hidden>←</span></Link>}
       </article>)}</div>
     </section>
 
