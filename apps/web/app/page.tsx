@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { HomeCollectionGrid } from '../components/home-collections';
+import { assetUrl } from '../lib/assets';
 
 const missions = [
   ['تجربه کن.', 'تجربه‌های دیجیتال', 'تجربه‌های دیجیتال کمپین را ببین و مسیر هر تجربه را دنبال کن. آشنایی تو با ایده‌ها و محصولات ما، بخشی از مشارکت تو در کمپین است.'],
@@ -29,7 +30,7 @@ const questions = [
 export default function Home() {
   return <main className="aida-shell">
     <section className="aida-hero hero" data-chamfer="bl" data-cut="64" data-radius="12" data-fillet="10">
-      <img className="aida-hero-photo" src="/products/home/hero-lifestyle.png" alt="" aria-hidden="true" />
+      <img className="aida-hero-photo" src={assetUrl('/products/home/hero-lifestyle.png')} alt="" aria-hidden="true" />
       <div className="aida-hero-copy">
         <p className="aida-label">دیپ بلو شاپ / گیفت‌شاپ برنامهٔ وفاداری و کامیونیتی</p>
         <h1>همراه شو. امتیاز بگیر.<br />هدیهٔ واقعی ببر.</h1>
