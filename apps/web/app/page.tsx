@@ -64,6 +64,18 @@ export default function Home() {
       </div>
     </section>
 
+    <section className="aida-section journey-section" aria-labelledby="how-title">
+      <header className="aida-heading"><div><p className="aida-label">از مشارکت تا خرید</p><h2 id="how-title">مأموریت آنجا. هدیه اینجا.</h2></div></header>
+      <div className="journey-timeline">{steps.map(([title, description], index) => <article className="journey-step" key={title}>
+        <span className="journey-node"><JourneyStrokeIcon name={journeyIconNames[index]} /></span>
+        <span className="journey-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)}</span>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        {index === 1 && <Link className="journey-command" href="/account/redeem">ثبت کد و شارژ امتیاز <span aria-hidden>←</span></Link>}
+        {index === 2 && <Link className="journey-command" href="/products">دیدن هدیه‌ها <span aria-hidden>←</span></Link>}
+      </article>)}</div>
+    </section>
+
     <section className="aida-section" id="collections" aria-labelledby="gifts-title">
       <header className="aida-heading"><div><p className="aida-label">انتخاب با امتیازهای تو</p><h2 id="gifts-title">همراهی‌ات را با خودت ببر.</h2></div><Link className="aida-command" href="/collections">همهٔ کالکشن‌ها <span aria-hidden>←</span></Link></header>
       <p className="aida-lede" style={{ maxWidth: 'none', marginBottom: 24 }}>از پوشاک و اکسسوری تا کیف و محصولات الکترونیکی؛ هدیه‌ای انتخاب کن که به کارت بیاید. ارزش هر محصول را با امتیاز ببین و اعتبار برنامهٔ وفاداری‌ات را برای خرید آن خرج کن.</p>
@@ -82,18 +94,6 @@ export default function Home() {
           <span className="aida-command">پاداش مأموریت: {new Intl.NumberFormat('fa-IR').format(missionPoints[index])} امتیاز</span>
         </article>)}
       </div>
-    </section>
-
-    <section className="aida-section journey-section" aria-labelledby="how-title">
-      <header className="aida-heading"><div><p className="aida-label">از مشارکت تا خرید</p><h2 id="how-title">مأموریت آنجا. هدیه اینجا.</h2></div></header>
-      <div className="journey-timeline">{steps.map(([title, description], index) => <article className="journey-step" key={title}>
-        <span className="journey-node"><JourneyStrokeIcon name={journeyIconNames[index]} /></span>
-        <span className="journey-index">{new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 }).format(index + 1)}</span>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        {index === 1 && <Link className="journey-command" href="/account/redeem">ثبت کد و شارژ امتیاز <span aria-hidden>←</span></Link>}
-        {index === 2 && <Link className="journey-command" href="/products">دیدن هدیه‌ها <span aria-hidden>←</span></Link>}
-      </article>)}</div>
     </section>
 
     <section className="aida-cta" data-chamfer="bl" data-cut="44" data-radius="12" data-fillet="10">
