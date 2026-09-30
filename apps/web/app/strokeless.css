@@ -825,7 +825,7 @@ textarea,
 .journey-step h3 {
   margin: 18px 0 0;
   color: #f4f7f9;
-  font-size: 30px;
+  font-size: 24px;
   line-height: 1.45;
   font-weight: 700;
 }
@@ -834,7 +834,7 @@ textarea,
   max-width: 520px;
   margin: 18px 0 0;
   color: #a9b6c1;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 2;
 }
 
@@ -943,6 +943,6 @@ textarea,
   }
 
   .journey-step h3 {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
