@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: gift_shop
+      POSTGRES_USER: gift_shop
+      POSTGRES_PASSWORD: gift_shop
+    ports:
+      - "5432:5432"
+    volumes:
+      - gift_shop_postgres:/var/lib/postgresql/data
+volumes:
+  gift_shop_postgres:

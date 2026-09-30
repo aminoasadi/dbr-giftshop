@@ -1,0 +1,2 @@
+import { Module } from '@nestjs/common'; import { ConfigModule } from '@nestjs/config'; import { TypeOrmModule } from '@nestjs/typeorm'; import { AuthModule } from './modules/auth/presentation/auth.module'; import { StoreModule } from './modules/catalog/presentation/store.module';
+@Module({imports:[ConfigModule.forRoot({isGlobal:true}),TypeOrmModule.forRoot({type:'postgres',url:process.env.DATABASE_URL,autoLoadEntities:true,synchronize:process.env.DB_SYNCHRONIZE==='true'}),AuthModule,StoreModule]}) export class AppModule {}

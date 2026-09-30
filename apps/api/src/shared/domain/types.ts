@@ -1,0 +1,1 @@
+export type Role='customer'|'admin'; export type ProductStatus='draft'|'active'|'archived'; export type OrderStatus='pending'|'paid'|'processing'|'shipped'|'delivered'|'cancelled'; export type PaymentStatus='pending'|'paid'|'failed';

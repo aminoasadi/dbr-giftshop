@@ -1,0 +1,14 @@
+{
+  "name": "dbr-gift-shop",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace=@gift-shop/web",
+    "dev:api": "npm run start:dev --workspace=@gift-shop/api",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspace=@gift-shop/api"
+  }
+}

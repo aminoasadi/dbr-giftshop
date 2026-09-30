@@ -1,0 +1,1 @@
+import{ProductGrid}from'../../components/products';export default function Products(){return <main className="shell"><div className="eyebrow">ALIASYS / Merchandise series 01</div><h1>کالکشن رسمی محصولات</h1><p className="muted">مرچندایز کاربردی ALIASYS با تصویر محصول واقعی، لوگوی رسمی و قاب آبی/کروم طراحی شده است.</p><ProductGrid/></main>}

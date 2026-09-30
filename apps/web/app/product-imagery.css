@@ -1,0 +1,54 @@
+:root {
+  --product-image-background: radial-gradient(circle at 50% 24%, #bcc9d5 0, #9dabb9 35%, #627587 74%, #405568 100%);
+}
+
+.merch-visual,
+.collection-preview,
+.product-detail-visual {
+  background: var(--product-image-background);
+  aspect-ratio: 6 / 5;
+  min-height: 0;
+  height: auto;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.merch-visual .merch-cutout,
+.collection-preview img,
+.product-detail-visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  padding: 7%;
+  filter: none;
+}
+
+.product-image-stage {
+  display: block;
+  position: absolute;
+  inset: 9%;
+}
+
+.product-image-stage svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.cart-product-image {
+  position: relative;
+  aspect-ratio: 6 / 5;
+  width: 100%;
+  background: var(--product-image-background);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.merch-code { display: none; }

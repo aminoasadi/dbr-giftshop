@@ -1,0 +1,650 @@
+.top,
+.panel,
+.card,
+.aida-hero,
+.aida-card,
+.aida-cta,
+.faq-bottom-cta,
+.merch-card,
+.button,
+.notice {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+:root {
+  --cut: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    28px 100%,
+    24px calc(100% - 1px),
+    21px calc(100% - 3px),
+    3px calc(100% - 21px),
+    1px calc(100% - 24px),
+    0 calc(100% - 28px)
+  );
+}
+
+.panel::before,
+.card::before {
+  display: none !important;
+}
+
+.dbr-chamfer-shell {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.dbr-chamfer-inner {
+  box-shadow: none !important;
+}
+
+.merch-gridline,
+.merch-card .price,
+.product-mark,
+.faq-full-list,
+.faq-full-item,
+.faq-list,
+.aida-faq,
+.hero-footer span + span {
+  border: 0 !important;
+}
+
+.secondary,
+.aida-secondary {
+  border: 0 !important;
+}
+
+.header-tools {
+  direction: rtl;
+  gap: 12px;
+}
+
+.header-login {
+  min-width: 92px;
+  min-height: 42px;
+  padding: 8px 22px;
+  font-size: 15px;
+  background: transparent !important;
+  color: #f4f7f9 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 780px) {
+  .header-login {
+    min-width: 74px;
+    min-height: 38px;
+    padding: 7px 16px;
+    font-size: 14px;
+  }
+}
+
+.aida-shell .faq-section {
+  width: 100%;
+  max-width: none;
+}
+
+.aida-shell .faq-section .aida-heading,
+.aida-shell .faq-section .faq-list {
+  width: 100%;
+}
+
+.aida-hero,
+.aida-card,
+.aida-cta,
+.faq-bottom-cta,
+.merch-card,
+.collection-card,
+.button {
+  border-radius: 18px;
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    42px 100%,
+    37px calc(100% - 1px),
+    33px calc(100% - 4px),
+    4px calc(100% - 33px),
+    1px calc(100% - 37px),
+    0 calc(100% - 42px)
+  );
+}
+
+.aida-hero,
+.aida-cta,
+.faq-bottom-cta {
+  border-radius: 22px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    70px 100%,
+    63px calc(100% - 2px),
+    57px calc(100% - 6px),
+    6px calc(100% - 57px),
+    2px calc(100% - 63px),
+    0 calc(100% - 70px)
+  );
+}
+
+.button,
+.header-login,
+.merch-categories button {
+  border-radius: 12px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    26px 100%,
+    22px calc(100% - 1px),
+    19px calc(100% - 3px),
+    3px calc(100% - 19px),
+    1px calc(100% - 22px),
+    0 calc(100% - 26px)
+  );
+}
+
+.top,
+input,
+select,
+textarea,
+.notice,
+.panel,
+.card {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.panel,
+.card {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    38px 100%,
+    33px calc(100% - 1px),
+    29px calc(100% - 4px),
+    4px calc(100% - 29px),
+    1px calc(100% - 33px),
+    0 calc(100% - 38px)
+  );
+}
+
+.aida-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.aida-hero {
+  display: grid;
+  grid-template-columns: 1fr !important;
+  place-items: center;
+  text-align: center;
+}
+
+.aida-hero .aida-lede {
+  margin-inline: auto;
+}
+
+.aida-hero .aida-actions {
+  justify-content: center;
+}
+
+.aida-hero h1 {
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+@media (max-width: 640px) {
+  .aida-hero-copy {
+    max-width: none;
+    padding-inline: 22px;
+  }
+}
+
+.aida-hero {
+  min-height: 640px;
+  background: #04101c !important;
+}
+
+.aida-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 74% 46%, rgba(11, 35, 56, .08), rgba(4, 16, 28, .7) 50%, rgba(4, 16, 28, .96) 100%),
+    linear-gradient(90deg, rgba(4, 16, 28, .35), rgba(4, 16, 28, .9) 62%, rgba(4, 16, 28, .98));
+}
+
+.aida-hero-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center left;
+  filter: saturate(.82) contrast(1.06);
+  opacity: .92;
+}
+
+.home-product-logo {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  pointer-events: none;
+}
+
+.home-product-logo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(4, 16, 28, .28));
+}
+
+.home-collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    "feature feature hoodie polo"
+    "feature feature backpack cap";
+  grid-auto-rows: 320px;
+  gap: 6px;
+}
+
+.home-collection-card {
+  position: relative;
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+  color: #f4f7f9;
+  background: #0b2338;
+  border-radius: 18px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    46px 100%,
+    41px calc(100% - 1px),
+    36px calc(100% - 4px),
+    4px calc(100% - 36px),
+    1px calc(100% - 41px),
+    0 calc(100% - 46px)
+  );
+  transition: transform 140ms cubic-bezier(.2, .8, .2, 1), background 140ms cubic-bezier(.2, .8, .2, 1);
+}
+
+.home-collection-card--feature {
+  grid-area: feature;
+}
+
+.home-collection-card:nth-child(2) {
+  grid-area: hoodie;
+}
+
+.home-collection-card:nth-child(3) {
+  grid-area: polo;
+}
+
+.home-collection-card:nth-child(4) {
+  grid-area: cap;
+}
+
+.home-collection-card:nth-child(5) {
+  grid-area: backpack;
+}
+
+.home-collection-card:hover {
+  transform: translateY(-2px);
+  background: #12314a;
+}
+
+.home-collection-media {
+  position: absolute;
+  inset: 0;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at 52% 30%, #c9d3dc 0, #93a6b7 44%, #5d7285 100%);
+}
+
+.home-collection-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4, 16, 28, .02) 0, rgba(4, 16, 28, .08) 44%, rgba(4, 16, 28, .56) 78%, rgba(4, 16, 28, .86) 100%),
+    linear-gradient(90deg, rgba(4, 16, 28, .14), transparent 52%);
+  pointer-events: none;
+}
+
+.home-collection-media > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.home-collection-fill {
+  object-fit: cover;
+  object-position: center;
+  filter: blur(20px) saturate(.92) contrast(1.04);
+  opacity: .82;
+  transform: scale(1.12);
+}
+
+.home-collection-photo {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(.9) contrast(1.02);
+  transform: scale(1.035);
+  transform-origin: center;
+}
+
+.home-collection-media small {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 4;
+  padding: 5px 11px;
+  color: #f4f7f9;
+  background: rgba(7, 26, 44, .5);
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.35;
+  backdrop-filter: blur(8px);
+}
+
+.home-collection-copy {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  min-height: 100%;
+}
+
+.home-collection-copy strong {
+  display: block;
+  margin-top: auto;
+  font-size: 34px;
+  line-height: 1.25;
+  font-weight: 700;
+  text-shadow: 0 1px 18px rgba(4, 16, 28, .42);
+}
+
+.home-collection-copy em {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #d6dee4;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.home-collection-card--tile .home-collection-copy strong {
+  font-size: 28px;
+}
+
+.home-collection-copy em b {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  transform: scaleX(-1);
+}
+
+.home-product-logo {
+  opacity: .96;
+}
+
+.home-product-logo--tshirt {
+  top: 39%;
+  left: 67%;
+  width: 36px;
+  transform: rotate(-1deg);
+}
+
+.home-product-logo--hoodie {
+  top: 41%;
+  left: 63%;
+  width: 36px;
+  transform: rotate(-2deg);
+}
+
+.home-product-logo--tshirt::before,
+.home-product-logo--hoodie::before {
+  content: "";
+  position: absolute;
+  inset: 8% -10% 10% -62%;
+  z-index: 0;
+  background: #132640;
+  border-radius: 3px;
+}
+
+.home-product-logo--polo {
+  top: 47%;
+  left: 57%;
+  width: 34px;
+  transform: rotate(.5deg);
+}
+
+.home-product-logo--cap {
+  top: 42%;
+  left: 47%;
+  width: 42px;
+  transform: rotate(1deg);
+}
+
+.home-product-logo--duffel {
+  top: 43%;
+  left: 48%;
+  width: 46px;
+  transform: rotate(-2deg);
+}
+
+.home-product-logo--backpack {
+  top: 47%;
+  left: 47%;
+  width: 40px;
+  transform: rotate(.5deg);
+}
+
+.home-product-logo--accessory {
+  top: 43%;
+  left: 48%;
+  width: 30px;
+  transform: rotate(-1deg);
+}
+
+.home-product-logo--electronics {
+  top: 42%;
+  left: 49%;
+  width: 32px;
+  transform: rotate(.5deg);
+}
+
+@media (max-width: 1180px) {
+  .home-collections-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "feature feature"
+      "feature feature"
+      "hoodie polo"
+      "backpack cap";
+    grid-auto-rows: 260px;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .aida-hero::before {
+    background: linear-gradient(180deg, rgba(4, 16, 28, .58), rgba(4, 16, 28, .94) 72%);
+  }
+
+  .aida-hero-photo {
+    object-position: center;
+  }
+
+  .home-collections-grid {
+    grid-auto-rows: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .aida-hero {
+    min-height: 700px;
+  }
+
+  .home-collections-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "feature"
+      "hoodie"
+      "polo"
+      "cap"
+      "backpack";
+    grid-auto-rows: 360px;
+  }
+
+}
+
+.merch-grid .merch-card {
+  border-radius: 18px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    44px 100%,
+    39px calc(100% - 1px),
+    35px calc(100% - 4px),
+    4px calc(100% - 35px),
+    1px calc(100% - 39px),
+    0 calc(100% - 44px)
+  );
+}
+
+.merch-card .button {
+  border-radius: 12px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    26px 100%,
+    22px calc(100% - 1px),
+    19px calc(100% - 3px),
+    3px calc(100% - 19px),
+    1px calc(100% - 22px),
+    0 calc(100% - 26px)
+  );
+}
+
+.aida-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 48px;
+  min-height: 292px;
+  margin-top: 86px;
+  padding: 64px 72px;
+  align-content: center;
+  justify-items: start;
+  overflow: hidden;
+  background: #0b2338 !important;
+  text-align: right;
+  isolation: isolate;
+}
+
+.aida-cta::before {
+  content: none;
+  position: absolute;
+  z-index: -1;
+  inset-inline-start: auto;
+  inset-inline-end: 72px;
+  top: 50%;
+  width: 182px;
+  aspect-ratio: 1;
+  border: 1px solid rgba(29, 70, 103, .88);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  opacity: .72;
+}
+
+.aida-cta .aida-label {
+  grid-column: 1;
+  margin: 0 0 10px;
+  color: #a9b6c1;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.aida-cta h2 {
+  grid-column: 1;
+  max-width: 900px;
+  margin: 0;
+  color: #f4f7f9;
+  font-size: clamp(34px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.34;
+  letter-spacing: 0;
+  text-align: right;
+}
+
+.aida-cta .button {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  justify-self: start;
+  min-width: 176px;
+  min-height: 56px;
+  padding-inline: 28px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+@media (max-width: 760px) {
+  .aida-cta {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+    min-height: 250px;
+    margin-top: 56px;
+    padding: 42px 26px;
+  }
+
+  .aida-cta::before {
+    inset-inline-start: auto;
+    inset-inline-end: -48px;
+    width: 150px;
+    opacity: .42;
+  }
+
+  .aida-cta h2 {
+    font-size: 30px;
+  }
+
+  .aida-cta .button {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: end;
+  }
+}
